@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: aliceblue;
+    }
+
+    #cont-salida {
+    width: 95%;
+    height: 95%;
+    border: double 3px blue;
+    display: inline-block;
+    padding: 1%; 
+    margin: 0 auto; 
+    margin-top: 2px;
+}
+    #cont-productos {
+    width: 95%;
+    height: 95%;
+    padding: 1%;
+    border: solid 1px blueviolet;
+    background-color: rgb(245, 255, 254);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Para imagen x URL */
+    background-size: cover;
+    background-position: center;  
+    /*display: none;*/
+}
+    /* Estilos para el carrusel */
+    .carousel-container {
+      width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-slide {
+      display: flex;
+      margin: auto;
+      width: fit-content;
+      transition: transform 0.75s ease-in-out;
+    }
+
+    .carousel-item {
+    align-content: center;
+    flex: 0 0 33.33%;
+    padding: 3px;
+    box-sizing: border-box;
+    }
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: #ccc;
+      color: #fff;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+    }
+    .carousel-button2 {
+      position: absolute;
+      top: 65%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: #ccc;
+      color: #fff;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+    }
+
+    .carousel-button.left {
+      left: 3px;
+    }
+
+    .carousel-button.right {
+      right: 3px;
+    }
+    .carousel-button2.left {
+      left: 3px;
+    }
+
+    .carousel-button2.right {
+      right: 3px;
+    }
+  </style>
+</head>
+<body>
+<div id="cont-salida">
+<div id="cont-productos">
+  <div class="carousel-container">
+    <div class="carousel-slide">
+        <div class="carousel-item">
+            <img src="https://cdn.autoproyecto.com/wp-content/uploads/2021/08/2023-Nissan-Z-32.jpg" alt="Imagen 1">
+            <h3>Slide 1</h3>
+        </div>
+        <div class="carousel-item">
+            <img src="https://cdn.autoproyecto.com/wp-content/uploads/2021/08/2023-Nissan-Z-31.jpg" alt="Imagen 2">
+            <h3>Slide 2</h3>
+        </div>
+        <div class="carousel-item">
+            <img src="https://cdn.autoproyecto.com/wp-content/uploads/2022/08/Nissan-Z-2023-1600-01.jpg" alt="Imagen 3">
+            <h3>Slide 3</h3>
+        </div>
+        <div class="carousel-item">
+            <img src="https://cdn.autoproyecto.com/wp-content/uploads/2022/08/Nissan-Z-2023-1280-56.jpg" alt="Imagen 4">
+            <h3>Slide 4</h3>
+        </div>
+            <div class="carousel-item">
+            <img src="https://cdn.autoproyecto.com/wp-content/uploads/2023/07/Nissan-GT-R-2024-1600-02.jpg" alt="Imagen 5">
+            <h3>Slide 5</h3>
+        </div>
+        <div class="carousel-item">
+            <img src="https://cdn.autoproyecto.com/wp-content/uploads/2021/08/2023-Nissan-Z-28.jpg" alt="Imagen 6">
+            <h3>Slide 6</h3>
+        </div>
+        <div class="carousel-item">
+            <img src="https://cdn.autoproyecto.com/wp-content/uploads/2022/08/Nissan-Z-2023-1600-01.jpg" alt="Imagen 7">
+            <h3>Slide 7</h3>
+        </div>
+        <div class="carousel-item">
+            <img src="https://cdn.autoproyecto.com/wp-content/uploads/2022/08/Nissan-Z-2023-1280-56.jpg" alt="Imagen 8">
+            <h3>Slide 8</h3>
+        </div>
+            <div class="carousel-item">
+            <img src="https://cdn.autoproyecto.com/wp-content/uploads/2023/07/Nissan-GT-R-2024-1600-02.jpg" alt="Imagen 9">
+            <h3>Slide 9</h3>
+        </div>
+        <div class="carousel-item">
+            <img src="https://cdn.autoproyecto.com/wp-content/uploads/2021/08/2023-Nissan-Z-28.jpg" alt="Imagen 10">
+            <h3>Slide 10</h3>
+        </div>
+        <!-- Agrega más elementos (HASTA 14) "carousel-item" si deseas mostrar más slides -->
+    </div>
+    <div class="carousel-button left" onclick="carouselSlide(-1)">&#10094;</div>
+    <div class="carousel-button2 left" onclick="carouselSlide(-2)">&#10094 &#10094;</div>
+    <div class="carousel-button right" onclick="carouselSlide(1)">&#10095;</div>
+    <div class="carousel-button2 right" onclick="carouselSlide(2)">&#10095 &#10095;</div>
+  </div> 
+</div>
+</div>
+    <script src="carousel.js"></script>
+</body>
