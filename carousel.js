@@ -21,21 +21,24 @@ const carouselSlide = (direction) => {
     console.log("slOf:"+slideOffset);
     // Obtener la posición actual
     const currentPosition = carousel.scrollLeft;
+    // El scroll left no funciona por lo tanto toda esta parte no se usa...
     const newPosition = currentPosition + slideOffset;
     console.log("cuPo:"+currentPosition);
     console.log("nwPo:"+newPosition);
-
+    // const prueba de parametros posibles
+    const paramPrueba = carousel.scrollWidth; //da 7999 debería dar 8000?
+    console.log("pPru:"+paramPrueba);
     // Ajustar la posición para mostrar los slides correctamente
     const maxPosition = (totalItems - slidesToShow) * itemWidth;
     const minPosition = 0;
     console.log("mxPo:"+maxPosition);
     let adjustedPosition = Math.max(minPosition, Math.min(maxPosition, newPosition));
+    console.log("adPo1:"+adjustedPosition);
     // console.log("adPo:"+adjustedPosition); NO LA IMPRIMO 
     // Si el desplazamiento excede el ancho total, ajustar a la posición máxima
     // Idem para la mínima
     //if (adjustedPosition === maxPosition && newPosition > maxPosition) {
-    //  adjustedPosition = maxPosition;
-    //}
+    //  adjustedPosition = maxPosition;}
     // USO ESTE ALGORITMO EN SU LUGAR , CON AGREGADO DE BOTON PARA IR AL FINAL O PPIO EN UN TOQUE.
     if ((direction == 1)||(direction == -1)){ 
       contCarou += direction;
@@ -44,12 +47,18 @@ const carouselSlide = (direction) => {
       if (contCarou == ((maxPosition/itemWidth)+1)){contCarou--}
       else if (contCarou < 0){contCarou++};
       adjustedPosition = (currentPosition + (itemWidth*contCarou));
-      console.log("adPo:"+adjustedPosition);
     }
     else {
-      if (direction > 0) {adjustedPosition = (maxPosition);}
-      else {adjustedPosition = (minPosition);}
+      if (direction > 0) {
+          adjustedPosition = (maxPosition);
+          contCarou = (maxPosition/itemWidth);
+        }
+      else {
+        adjustedPosition = (minPosition);
+        contCarou = 0;
+      }
     }
+    console.log("adPo2:"+adjustedPosition);
     // Aplicar la transformación CSS para mover el carrusel
     carousel.style.transform = `translateX(-${adjustedPosition}px)`;
   };
